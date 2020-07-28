@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { LocationOn, Cake } from "../../styles/icons";
+import { LocationOn, Cake } from "../../styles/Icons";
+import Button from '../Button';
 
 export const Container = styled.div`
   display: flex;
@@ -64,6 +65,21 @@ export const ProfileData = styled.div`
       color: var(--twitter);
     }
   }
+  ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    > li {
+      font-size: 15px;
+      color: var(--gray);
+
+      > svg {
+        fill: var(--gray);
+        margin-right: 5px;
+      }
+    }
+  }
 `;
 
 const iconCSS = css`
@@ -79,4 +95,30 @@ export const CakeIcon = styled(Cake)`
   ${iconCSS}
 `;
 
-export const Followage = styled.div``;
+export const Followage = styled.div`
+  display: flex;
+
+  > span {
+    font-size: 15px;
+    color: var(--gray);
+
+    & + span {
+      margin-left: 20px;
+    }
+  }
+`;
+
+export const EditButton = styled(Button)`
+  position: absolute;
+  top: 2vw;
+  right: 7px;
+
+  padding: 4px 16px;
+  font-size: 16px;
+
+  @media (min-width: 320px) {
+    top: 10px;
+    padding: 10px 19px;
+    font-size: 15px;
+  }
+`;
